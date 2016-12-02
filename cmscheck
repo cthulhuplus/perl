@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+@wp = `find /home/*/public_html/ -type d -name wp-includes -print -exec grep -Ri '$wp_version =' {} \;`;
+print "Wordpress Locations and Versions:\n";
+print @wp;

@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+#Apache analyzer script by Bill Brooks
+
+#Gather cPanel Accounts
+$cPanel = `ls /var/cpanel/users`;
+
+#Gather Apache Domain Logs
+@logs = `find /usr/local/apache/domlogs/$cPanel/* -type f |grep -v ftp_log`;
+#@logs = `find /usr/local/apache/domlogs/*/* -type f |grep -v ftp_log`;
+
+print @logs;
+#print $cPanel;
